@@ -11,3 +11,4 @@ This is a logistic regression model trained on tweets that use the word "depress
 - This should open a browser window with the files listed at the top of this page
 4. Click on Predict Depressed Tweet vs. Random Tweet.ipynb
 5. A new window will open. From the cell menu at the top click "Run All"
+6. The last cell at the bottom of the page will allow one to create their own journal entry, score it and see how each word contributed to the score
