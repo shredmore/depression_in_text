@@ -136,7 +136,7 @@ def submit_textarea():
 
 if __name__ == '__main__':
 	#load models
-	loaded_tfidf = joblib.load('tfidf_exported_model')
-	loaded_lr = joblib.load('logistic_regression_model')
+	# loaded_tfidf = joblib.load('tfidf_exported_model')
+	# loaded_lr = joblib.load('logistic_regression_model')
 	#start app
 	app.run(host='0.0.0.0', port=8080, debug=True)
