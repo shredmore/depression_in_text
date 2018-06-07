@@ -128,11 +128,14 @@ def submit_textarea():
 	#feed the tfidf matrix into pre-trained logistic regression
 	#model and get scores
 	score = loaded_lr.predict_proba(export_test_example)
+	string_1 = "Based on the language used in your journal entry here are the probabilities of no depression (left) to signs of depression (right): "
+
+    #response
+	response = string_1 + str(score)
 
 	#return score. have to use format() otherwise
 	#will throw an error. something specific to flask
-	return format(score)
-
+	return format(response)
 
 if __name__ == '__main__':
 	#load models
