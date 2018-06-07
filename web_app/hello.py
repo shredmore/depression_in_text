@@ -3,6 +3,7 @@
 # $ flask run
 
 import numpy as np
+import pandas as pd
 import string
 from flask import Flask, render_template, request
 from sklearn.externals import joblib
@@ -133,9 +134,21 @@ def submit_textarea():
     #response
 	response = string_1 + str(score)
 
+	#get words and weights from test journal
+	#follow this tutorial - https://sarahleejane.github.io/learning/python/2015/08/09/simple-tables-in-webapps-using-flask-and-pandas-with-python.html
+	# coef_sq = loaded_lr.coef_
+	# word_idx = np.nonzero(export_test_example)[1]
+	# vocab = np.array(loaded_tfidf.get_feature_names())[word_idx]
+	# weights = coef_sq[:, word_idx]
+	# df = pd.DataFrame({'Weights of words in sample Journal': weights[0]}
+ #                  , index=vocab)
+	# df = df.sort_values(by='Weights of words in sample Journal')
+
 	#return score. have to use format() otherwise
 	#will throw an error. something specific to flask
 	return format(response)
+	# return render_template(tables=[df.to_html()])
+
 
 if __name__ == '__main__':
 	#load models
