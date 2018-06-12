@@ -129,25 +129,26 @@ def submit_textarea():
 	#feed the tfidf matrix into pre-trained logistic regression
 	#model and get scores
 	score = loaded_lr.predict_proba(export_test_example)
-	string_1 = "Based on the language used in your journal entry here are the probabilities of no depression (left) to signs of depression (right): "
+	# string_1 = "Based on the language used in your journal entry here are the probabilities of no depression (left) to signs of depression (right): "
 
     #response
-	response = string_1 + str(score)
+	# response = string_1 + str(score)
 
 	#get words and weights from test journal
 	#follow this tutorial - https://sarahleejane.github.io/learning/python/2015/08/09/simple-tables-in-webapps-using-flask-and-pandas-with-python.html
-	# coef_sq = loaded_lr.coef_
-	# word_idx = np.nonzero(export_test_example)[1]
-	# vocab = np.array(loaded_tfidf.get_feature_names())[word_idx]
-	# weights = coef_sq[:, word_idx]
-	# df = pd.DataFrame({'Weights of words in sample Journal': weights[0]}
- #                  , index=vocab)
-	# df = df.sort_values(by='Weights of words in sample Journal')
+	coef_sq = loaded_lr.coef_
+	word_idx = np.nonzero(export_test_example)[1]
+	vocab = np.array(loaded_tfidf.get_feature_names())[word_idx]
+	weights = coef_sq[:, word_idx]
+	df = pd.DataFrame({'Weights of words in sample Journal': weights[0]}
+                  , index=vocab)
+	df = df.sort_values(by='Weights of words in sample Journal')
+	table = df.to_html()
 
 	#return score. have to use format() otherwise
 	#will throw an error. something specific to flask
-	return format(response)
-	# return render_template(tables=[df.to_html()])
+	# return 'Your scores are: {}'.format(score)
+	return render_template('results.html', results=score, table=table, text=text)
 
 
 if __name__ == '__main__':

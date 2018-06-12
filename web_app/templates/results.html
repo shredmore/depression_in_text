@@ -1,0 +1,31 @@
+<!-- <html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Microblog</title>
+      {% else %}
+      <title>Welcome to Microblog</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Microblog: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html> -->
+
+<html>
+    <head>
+      <title>Results</title>
+    </head>
+    <body>
+        <h3>Original Journal Entry: </h3>
+        {{text}}
+        <br>
+        <br>
+        <h3>Here are the results: </h3>
+        {{results}}
+        <br>
+        <h3>Weights of specific words: </h3>
+        {{table|safe}}
+    </body>
+</html>
