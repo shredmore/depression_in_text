@@ -93,9 +93,9 @@ def preprocessor(raw_text):
     preprocessed_text=(" ").join(canonical_tokens) 
     return preprocessed_text
 
- #####
- #STOPWORDS
- ####
+#####
+#STOPWORDS
+####
 # sklearn stopwords (frozenset)
 sklearn_stopwords=stop_words.ENGLISH_STOP_WORDS
 print("number of sklearn stopwords: %d" %(len(sklearn_stopwords)))
