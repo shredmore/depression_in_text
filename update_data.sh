@@ -22,6 +22,8 @@ cat ~/cronjobs/twitter_data_depression/tweets/*.csv > $file_name$file_ext
 #git push origin master
 
 #count number of lines in depression_tweets.csv save as variable
+#won't know actual number needed until further clean up of depression tweets
+number=$(wc -l depression_tweets.csv)
 
 #archive old random tweets.csv
 
