@@ -4,7 +4,7 @@
 #ssh -p 1722 pi@shredmore.chickenkiller.com
 
 #cd into depression in text
-cd depression_id_text
+#cd depression_id_text
 
 #git pull origin master
 #git pull origin master
