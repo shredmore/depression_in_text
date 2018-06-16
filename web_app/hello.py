@@ -142,7 +142,7 @@ def submit_textarea():
 	weights = coef_sq[:, word_idx]
 	df = pd.DataFrame({'Weights of words in sample Journal': weights[0]}
                   , index=vocab)
-	#df = df.sort_values(by='Weights of words in sample Journal')
+	df = df.sort(columns='Weights of words in sample Journal', ascending=False, inplace=True)
 	table = df.to_html()
 
 	#return score. have to use format() otherwise
